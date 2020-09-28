@@ -1,21 +1,22 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from '../Pages/Home/home';
+import { Switch, Route } from "react-router-dom";
+import Home from '../Pages/Home/index';
 import Clientes from '../Pages/Clientes/clientes';
-import ClienteTotalCompra from '../Pages/Clientes/clientesTotalCompra';
-import Compras2016 from '../Pages/Clientes/compras2016';
+import ClienteTotalCompra from '../Pages/MaiorValorCompras/index';
+import Compras2016 from '../Pages/Compras2016/index';
+import ClientesFieis from '../Pages/ClientesFieis/index';
 
 
 function Rotas() {
   return (
-    <BrowserRouter>
+  
     <Switch>
-      <Route path="/" exact component={Home} />
-      <Route path="/Clientes" component={Clientes} />
-      <Route path="/ClienteTotalCompra" component={ClienteTotalCompra} />
-      <Route path="/bestClient" component={Compras2016} />
+      <Route path={"/"} exact component={Home} />
+      <Route path={"/Clientes"} component={Clientes} />
+      <Route path={"/ClienteTotalCompra"} component={ClienteTotalCompra} />
+      <Route path={"/bestClient"} component={Compras2016} />
+      <Route path={"/ClientesFieis"} component={ClientesFieis} />
     </Switch>
-    </BrowserRouter>
   );
 }
 

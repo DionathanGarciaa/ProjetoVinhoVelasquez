@@ -1,34 +1,35 @@
 import React from 'react';
-import { Container, Menu } from '../sidebarComponent/sidebarStyle';
+import { Link } from 'react-router-dom';
+import { Container, Menu } from './style';
 
 function Sidebar (){
   return (
   <Container>
     <Menu>
 
-    <a href="/Clientes">
+    <Link to="/Clientes">
         <strong>Clientes</strong>
-    </a>
+    </Link>
 
 
-    <a href="/ClienteTotalCompra">
+    <Link to="/ClienteTotalCompra">
         <strong>Desafio - #1</strong>
-    </a>
+    </Link>
 
 
-    <a href="/bestClient">
+    <Link to="/bestClient">
         <strong>Desafio - #2</strong>
-    </a>
+    </Link>
 
 
-    <a href="/Clientes">
+    <Link to="/ClientesFieis">
         <strong>Desafio - #3</strong>
-    </a>
+    </Link>
 
 
-    <a href="/Clientes">
+    <Link to="/Clientes">
         <strong>Desafio - #4</strong>
-    </a>
+    </Link>
     
     </Menu>
   </Container>

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 
 export const Container = styled.div``;
 
@@ -9,7 +10,7 @@ export const Header = styled.header
   background: #722f37;
   `;
 
-export const HeaderCont = styled.div 
+export const HeaderCont = styled(Link) 
 `
   margin: 0 auto;
   display: flex;

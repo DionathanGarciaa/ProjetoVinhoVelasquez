@@ -2,18 +2,19 @@ import styled from 'styled-components';
 
 export const Container = styled.aside`
   background-color #722f37;
-  width: 280px;
+  width: 400px;
   
 `;
 
 export const Menu = styled.div`
   display: flex;
   flex-direction: column;
+  
 
   a {
     border-style: double;
     text-decoration: none;
-    padding: 37px;
+    padding: 47px;
     transition: 0.3s;
     display: flex;
     align-items: center;

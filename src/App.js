@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from './Components/headerComponent/header';
-import Sidebar from './Components/sidebarComponent/sidebar';
-import { Container, SidebarMenu } from './Pages/Styles/StyleApp';
-import { BrowserRouter, BrowserRouter as Router} from "react-router-dom";
-import GlobalStyle from './Pages/Styles/global';
+import Header from './Components/Header/index';
+import Sidebar from './Components/Sidebar/index';
+import { Container, SidebarMenu } from './Styles/StyleApp';
+import { BrowserRouter} from "react-router-dom";
+import GlobalStyle from './Styles/global';
 import Rotas from './Routes/routes';
 
 

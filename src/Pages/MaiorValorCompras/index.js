@@ -4,42 +4,46 @@ import { Container, Titulo, Card, Span, CardImg, CardText} from './style';
 import Avatar from '../../Assets/avatar2.svg'
 
 
-function Clientes() {
+function Desafio1() {
   const [clientes, setClientes] = useState([]); 
   
   useEffect(() => {
-    api.get('/clients').then((response)=> {
+    api.get('/clientsOrderedByPurchase').then((response)=> {
       setClientes(response.data)
     })
   }, [])
 
   return ( 
-
+    
     <Container>
+    
+    <Titulo> 
+      Clientes com maior valor em compra.
+     </Titulo>
 
-        <Titulo>Clientes</Titulo>
-  
         {clientes.map((item) => {
           return(
-            
-          <Card>
 
+          <Card>  
+          
           <CardImg>
           < img  src = { Avatar } /> 
           </CardImg>
 
           <CardText>
-          <Span> Nome: {item.nome} </Span> 
-          <Span> Cpf: {item.cpf} </Span> 
+          <Span> Nome: {item.nome}</Span> 
+          <Span> Cpf: {item.cpf}</Span> 
+          <Span> Total Gasto: {item.valorTotal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</Span> 
           </CardText>
-
-
+          
           </Card>)
-        })}
 
+         
+      })}
+    
     </Container>
- 
+  
   );
 }
 
-export default Clientes;
+export default Desafio1;
