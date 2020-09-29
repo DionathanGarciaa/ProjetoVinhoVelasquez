@@ -9,6 +9,7 @@ width: 100%;
 display: flex;
 flex-wrap: wrap;
 overflow: scroll;
+padding-bottom: 20px;
 
 
 ::-webkit-scrollbar {

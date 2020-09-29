@@ -17,7 +17,7 @@ function Clientes() {
 
     <Container>
 
-        <Titulo>Clientes</Titulo>
+        <Titulo>Clientes:</Titulo>
   
         {clientes.map((item) => {
           return(

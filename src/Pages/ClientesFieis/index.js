@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import api from '../../Services/Api/index';
+import { Container, Titulo, Card, Span, CardImg, CardText} from './style';
+import Avatar from '../../Assets/avatar2.svg'
 
 
 function Desafio3() {
@@ -12,14 +14,32 @@ function Desafio3() {
   }, [])
 
   return ( 
-    
-    <div>
-    <h1>Desafio - 3</h1>
-    <span>
-    Liste os clientes mais fiéis.
-    </span>
-    </div>
+
+    <Container>
+
+        <Titulo>Nossos clientes fiéis:</Titulo>
   
+        {clientes.map((item) => {
+          return(
+            
+          <Card>
+
+          <CardImg>
+          < img  src = { Avatar } /> 
+          </CardImg>
+
+          <CardText>
+          <Span> Nome: {item.nome} </Span> 
+          <Span> Cpf: {item.cpf} </Span> 
+          <Span>Total de Compras: {item.totalCompras} </Span>
+          </CardText>
+
+
+          </Card>)
+        })}
+
+    </Container>
+ 
   );
 }
 

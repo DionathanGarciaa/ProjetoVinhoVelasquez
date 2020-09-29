@@ -6,8 +6,7 @@ export const Container = styled.div`
 
 height: 660px;
 width: 100%;
-display: flex;
-flex-wrap: wrap;
+overflow: scroll;
 
 `;
 
@@ -30,16 +29,27 @@ font-weight:bold;
 
 `;
 
+export const CardExterno = styled.div`
+
+display: flex;
+align-items: center;
+width: 100%;
+margin-left: 25%;
+margin-top: 10%; 
+
+
+`;
+
 export const Card = styled.div`
 
 display:flex;
 align-items: center;
 width: 35%;
-padding: 5px;
-margin: 25px 0 0 25px;
+padding: 25px ;
+margin: 25px;
 box-shadow: 0 0 10px 0px #f7df1e;
 background-color #f1f1f1;
-color: black;
+color: #000;
 
 `;
 
@@ -51,7 +61,6 @@ display:flex;
 
 export const CardText = styled.div`
 
-display: flex
 font-family: Arial, Helvetica, sans-serif
 
 `;

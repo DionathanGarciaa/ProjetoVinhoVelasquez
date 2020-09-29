@@ -18,7 +18,7 @@ function Desafio1() {
     <Container>
     
     <Titulo> 
-      Clientes com maior valor em compra.
+      Clientes com maior valor em compra:
      </Titulo>
 
         {clientes.map((item) => {
