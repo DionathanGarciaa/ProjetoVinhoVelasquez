@@ -27,7 +27,7 @@ function Sidebar (){
     </Link>
 
 
-    <Link to="/Clientes">
+    <Link to="/recomendarVinho">
         <strong>Desafio - #4</strong>
     </Link>
     

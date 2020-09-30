@@ -5,6 +5,7 @@ import Clientes from '../Pages/Clientes/clientes';
 import ClienteTotalCompra from '../Pages/MaiorValorCompras/index';
 import Compras2016 from '../Pages/Compras2016/index';
 import ClientesFieis from '../Pages/ClientesFieis/index';
+import RecomendarVinho from '../Pages/RecomendarVinho/index.js';
 
 
 function Rotas() {
@@ -16,6 +17,7 @@ function Rotas() {
       <Route path={"/ClienteTotalCompra"} component={ClienteTotalCompra} />
       <Route path={"/bestClient"} component={Compras2016} />
       <Route path={"/ClientesFieis"} component={ClientesFieis} />
+      <Route path={"/recomendarVinho"} component={RecomendarVinho} />
     </Switch>
   );
 }

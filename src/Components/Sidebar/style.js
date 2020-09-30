@@ -3,14 +3,12 @@ import styled from 'styled-components';
 export const Container = styled.aside`
   background-color #722f37;
   width: 400px;
-  
 `;
 
 export const Menu = styled.div`
   display: flex;
   flex-direction: column;
   
-
   a {
     border-style: double;
     text-decoration: none;
@@ -21,7 +19,6 @@ export const Menu = styled.div`
     color: #f7df1e;
     font-size: 25px;
     
-
     &:hover {
       color: #312e38;
       background-color: #f7df1e;;

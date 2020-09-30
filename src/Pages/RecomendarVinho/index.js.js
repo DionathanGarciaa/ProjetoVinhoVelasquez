@@ -1,51 +1,70 @@
 import React, {useState, useEffect} from 'react';
 import api from '../../Services/Api/index';
-import { Container, Titulo, Card, Span, CardImg, CardText} from './style';
-import Avatar from '../../Assets/avatar2.svg'
+import { Container, Titulo, Span, CardText, CardExterno, Card, P} from './style';
 
 
-
-function Desafio4() {
-  const [recomendar, setRecomendar] = useState([]);
-  const [clientes, setClientes] = useState([]);
-
+function Desafio4 () {
+  const [clients, setClients] = useState([]); 
+  const [wineRecommended, setWineRecommended] = useState(" ");
+  const [client, setClient] = useState([]);
 
 
   useEffect(() => {
-      getClientes();
+      api.get('/clients').then((response) => {
+          setClients(response.data);
+      });
   }, []);
 
-  useEffect(() => {
-    api.get('/clients').then((response)=> {
-      setRecomendar(response.data)
-    })
-  }, [])
+const recommendWine = (cliente) => {
+    api.get(`/recommendWine/${cliente}`).then((response) => {
+        setWineRecommended(response.data);
+    });
+};
 
   return ( 
+      
+<Container>
 
-    <Container>
+    <Titulo>Recomendação de vinho</Titulo>
 
-        <Titulo>Clientes:</Titulo>
-  
-        {clientes.map((item) => {
-          return(
+    <CardExterno>
+
+            <Card>
+              <Span> Produto: </Span> <P>{wineRecommended && wineRecommended.produto}</P>
+                
+              <Span>Variedade:</Span> <P>{wineRecommended && wineRecommended.variedade}</P>
+          
+              <Span>País:</Span> <P>{wineRecommended && wineRecommended.pais}</P>
             
-          <Card>
-
-          <CardImg>
-          < img  src = { Avatar } /> 
-          </CardImg>
-
-          <CardText>
-          <Span> Nome: {item.nome} </Span> 
-          <Span> Cpf: {item.cpf} </Span> 
-          </CardText>
+              <Span>Categoria:</Span> <P>{wineRecommended && wineRecommended.categoria}</P>
+            
+              <Span> Safra: </Span> <P>{wineRecommended && wineRecommended.safra}</P>
+            </Card>
 
 
-          </Card>)
-        })}
+        <CardText>
+            <Span>Escolha um cliente:</Span>
+        </CardText>
 
-    </Container>
+        <select
+            onChange={(event) => {
+            let cpf = event.target.value.replace(/-|\.|/gi, "");
+            recommendWine(cpf);
+         }}
+        >
+        <option></option>
+        {clients.map((item) => (
+            <option key={item.cpf} value={item.cpf}>
+                {item.nome}
+            </option>
+        ))}
+        </select>
+   
+
+    </CardExterno>
+
+
+</Container>
  
   );
 }
